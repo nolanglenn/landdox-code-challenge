@@ -1,5 +1,5 @@
 import React from 'react';
-import uuidv4 from 'uuid/v4';
+import { v4 as uuidv4 } from 'uuid';
 import { render, fireEvent, screen } from '@testing-library/react';
 
 import EditTractOwnership from './';
@@ -88,7 +88,7 @@ describe('EditTractOwnership', () => {
   test('Should add empty mineral interest row', () => {
     let result;
 
-    render(<EditTractOwnership onChange={v => (result = v)} />);
+    render(<EditTractOwnership onChange={(v) => (result = v)} />);
 
     const addMineralInterest = screen.getByText('Add Mineral Interest');
     fireEvent.click(addMineralInterest);
@@ -100,7 +100,7 @@ describe('EditTractOwnership', () => {
   test('Should add and update mineral interest row', () => {
     let result;
 
-    render(<EditTractOwnership onChange={v => (result = v)} />);
+    render(<EditTractOwnership onChange={(v) => (result = v)} />);
 
     const addMineralInterest = screen.getByText('Add Mineral Interest');
     fireEvent.click(addMineralInterest);
@@ -126,7 +126,7 @@ describe('EditTractOwnership', () => {
   test('Should add and update mineral interest + NPRI row', () => {
     let result;
 
-    render(<EditTractOwnership onChange={v => (result = v)} />);
+    render(<EditTractOwnership onChange={(v) => (result = v)} />);
 
     const addMineralInterest = screen.getByText('Add Mineral Interest');
     fireEvent.click(addMineralInterest);
@@ -181,7 +181,7 @@ describe('EditTractOwnership', () => {
       },
     ];
 
-    render(<EditTractOwnership value={value} onChange={v => (result = v)} />);
+    render(<EditTractOwnership value={value} onChange={(v) => (result = v)} />);
 
     const id = value[0].id;
     const removeButton = screen.getByTestId(`mineralInterest-${id}.remove`);
@@ -218,7 +218,7 @@ describe('EditTractOwnership', () => {
       },
     ];
 
-    render(<EditTractOwnership value={value} onChange={v => (result = v)} />);
+    render(<EditTractOwnership value={value} onChange={(v) => (result = v)} />);
 
     const id = value[0].npris[0].id;
     const removeButton = screen.getByTestId(`npri-${id}.remove`);
