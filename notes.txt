@@ -1,0 +1,17 @@
+-Use a react-bootstrap Form for the bones of the component
+
+-Handle state with hooks
+
+-mineralInterests.map to create line items for each ownership
+
+
+
+Test:
+Should render without a value
+Should render with mineral interests 
+Should render with mineral interests and npris 
+Should add empty mineral interest row 
+Should add and update mineral interest row 
+Should add and update mineral interest + NPRI row 
+Should remove mineral interest row 
+Should remove NPRI row 

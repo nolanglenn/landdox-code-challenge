@@ -1,46 +1,33 @@
-import React from 'react';
-import { Form, FormControl, Col, Row, InputGroup } from 'react-bootstrap';
+import React, { useState } from 'react';
+import {
+  Form,
+  FormControl,
+  Col,
+  Row,
+  InputGroup,
+  Button,
+} from 'react-bootstrap';
+import { v4 as uuidv4 } from 'uuid';
 
-const MineralInterest = ({ value = [], onChange = () => {} }) => {
+function MineralInterest({ mineralInterest, index }) {
   return (
     <Form>
       <Row>
         <Col>
-          <Form.Label>Owner</Form.Label>
+          {mineralInterest.owner}
+          <Button>+ Add NPRI</Button>
         </Col>
-        <Col>
-          <Form.Label>Mineral Interest</Form.Label>
-        </Col>
-        <Col>
-          <Form.Label>NPRI</Form.Label>
-        </Col>
-        <Col>
-          <Form.Label>Lease</Form.Label>
-        </Col>
-      </Row>
-      <Row>
-        <Col>
-          <Form.Control placeholder="Name" />
-        </Col>
-        <Col>
-          <InputGroup className="mb-3">
-            <FormControl
-              placeholder="Mineral Interest"
-              aria-label="Mineral Interest"
-              aria-describedby="basic-addon2"
-            />
-            <InputGroup.Append>
-              <InputGroup.Text id="basic-addon2">%</InputGroup.Text>
-            </InputGroup.Append>
-          </InputGroup>
-        </Col>
+        <Col>{mineralInterest.interest}</Col>
         <Col></Col>
-        <Col>
-          <Form.Control placeholder="Lease" />
-        </Col>
+        <Col>{mineralInterest.lease}</Col>
       </Row>
     </Form>
   );
-};
+}
+// const MineralInterest = ({ value = [], onChange = () => {} }) => {
+//   return (
+
+//   );
+// };
 
 export default MineralInterest;
