@@ -1,13 +1,7 @@
-import React, { useState } from 'react';
-import {
-  Form,
-  FormControl,
-  Col,
-  Row,
-  InputGroup,
-  Button,
-} from 'react-bootstrap';
-import { v4 as uuidv4 } from 'uuid';
+import React from 'react';
+import { Form, Col, Row } from 'react-bootstrap';
+
+import EditTractOwnership from '../EditTractOwnership';
 
 function MineralInterest({ mineralInterest, index }) {
   return (
@@ -15,7 +9,7 @@ function MineralInterest({ mineralInterest, index }) {
       <Row>
         <Col>
           {mineralInterest.owner}
-          <Button>+ Add NPRI</Button>
+          {/* <Button>+ Add NPRI</Button> */}
         </Col>
         <Col>{mineralInterest.interest}</Col>
         <Col></Col>
