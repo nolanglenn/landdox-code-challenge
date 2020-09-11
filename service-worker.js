@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/landdox-code-challenge/precache-manifest.59845c4eb80d1962086c39720f9d5145.js"
+  "/landdox-code-challenge/precache-manifest.efba7733f0130082fe677b2a0f90de08.js"
 );
 
 self.addEventListener('message', (event) => {
