@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 
 import {
   Form,
@@ -10,36 +9,6 @@ import {
   Button,
 } from 'react-bootstrap';
 
-import MineralInterest from '../MineralInterest';
-
-const tractOwnerships = [
-  {
-    id: uuidv4(),
-    owner: 'Luke Skywalker',
-    interest: 0.5,
-    lease: 'Tatooine Lease',
-    npris: [
-      {
-        id: uuidv4(),
-        owner: 'Leia Organa',
-        interest: 0.45,
-      },
-      {
-        id: uuidv4(),
-        owner: 'Han Solo',
-        interest: 0.15,
-      },
-    ],
-  },
-  {
-    id: uuidv4(),
-    owner: 'Leia Organa',
-    interest: '5',
-    lease: 'Alderaan Lease',
-    npris: [],
-  },
-];
-
 function EditTractOwnership({ addMineralInterest }) {
   const [value, setValue] = useState('');
 
@@ -47,8 +16,6 @@ function EditTractOwnership({ addMineralInterest }) {
     e.preventDefault();
     if (!value) return;
     addMineralInterest(value);
-    tractOwnerships.push(value);
-    console.log(tractOwnerships);
     setValue('');
   };
 
@@ -71,21 +38,30 @@ function EditTractOwnership({ addMineralInterest }) {
               aria-describedby="basic-addon2"
             />
             <InputGroup.Append>
-              <InputGroup.Text id="basic-addon2">%</InputGroup.Text>
+              <InputGroup.Text
+                id="basic-addon2"
+                type="text"
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              >
+                %
+              </InputGroup.Text>
             </InputGroup.Append>
           </InputGroup>
         </Col>
         <Col></Col>
         <Col>
-          <Form.Control placeholder="Lease" />
+          <Form.Control
+            placeholder="Lease"
+            type="text"
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+          />
         </Col>
       </Row>
       <Button type="submit">Add Mineral Interest</Button>
     </Form>
   );
 }
-// const EditTractOwnership = ({ value = [], onChange = () => {} }) => {
-
-// };
 
 export default EditTractOwnership;

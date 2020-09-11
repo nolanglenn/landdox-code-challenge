@@ -8,7 +8,6 @@ import './App.css';
 
 import EditTractOwnership from './EditTractOwnership';
 import MineralInterest from './MineralInterest';
-import Icon from './Icon';
 
 const tractOwnerships = [
   {
@@ -53,7 +52,7 @@ function App() {
           <Jumbotron>
             <Col>
               <h1>
-                <Image src="public/Images/lando.png" roundedCircle />
+                <Image src="public/lando.png" roundedCircle />
                 Landdox Calrissian Code Challenge
               </h1>
             </Col>

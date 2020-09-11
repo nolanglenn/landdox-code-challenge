@@ -1,11 +1,9 @@
 import React from 'react';
 import { Form, Col, Row } from 'react-bootstrap';
 
-import EditTractOwnership from '../EditTractOwnership';
-
 function MineralInterest({ mineralInterest, index }) {
   return (
-    <Form>
+    <Form data-testid="mineral-interest">
       <Row>
         <Col>
           {mineralInterest.owner}
